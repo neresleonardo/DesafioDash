@@ -7,7 +7,7 @@ const Dashboard: React.FC = () => {
     return(
         <div>
            <Container>
-            
+                <h1>OLAAA</h1>
            </Container>
         </div>
     );

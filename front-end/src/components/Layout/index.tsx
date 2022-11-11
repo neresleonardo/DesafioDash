@@ -1,18 +1,22 @@
 import React from "react";
 import { Aside } from "../Aside";
+import Content from "../Content";
 import MainHeader from "../MainHeader";
 
-// styles
-import { Grid } from './styles'
+import { Grid } from './styles';
 
+const Layout: React.FC<any> = ( {children}) => { 
+    return (
+        
+        <Grid>
+            <MainHeader/>
+            <Aside/>
 
-    const Layout = (props:any) => {
-        return (
-            <Grid>
-                <MainHeader></MainHeader>
-                <Aside></Aside>
-            </Grid>
-        );
+            <Content>
+            {children}
+            </Content>
+        </Grid>
+    )
 }
 
 export default Layout;
