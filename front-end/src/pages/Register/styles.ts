@@ -57,6 +57,7 @@ export const TextTitles = styled.text`
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px;
+    color: #090748;
 `
 export const Textp = styled.text`
     font-size: 1rem;

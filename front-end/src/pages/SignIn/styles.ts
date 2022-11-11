@@ -57,16 +57,18 @@ export const TextTitles = styled.text`
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px;
+    color: #090748;
 `
 export const Textp = styled.text`
     font-size: 1rem;
     padding: 10px;
+    color: #c6c6c6;
 `
 
 export const Texta = styled.text`
     font-size: 1rem;
     padding: 10px;
-    color: #ccc;
+    color: #c6c6c6;
     cursor: pointer;
 `
 
