@@ -3,14 +3,15 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import { useAuth } from '../../hooks/auth';
+import api from '../../services/api';
 import { Aside, AsideA, AsideTitle, BoxLogin, Container, Form, Main, Texta, Textah, Textp, TextTitles } from './styles';
 
 const SignIn: React.FC = () => {
 
+    const { signIn } = useAuth();
+
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-
-    const { signIn } = useAuth();
 
     return (
         <div>

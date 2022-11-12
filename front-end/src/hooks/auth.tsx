@@ -13,6 +13,7 @@ interface IAuthProvider {
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
+    
     const [logged, setLogged] = useState<boolean>(() => {
         const isLogged = localStorage.getItem('@desafio-falife:logged');
 
@@ -20,6 +21,7 @@ const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     });
 
     // Usuário
+
     const signIn = (email: string, password: string) => {
         if(email === 'leonardo@gmail.com' && password === '123'){
             localStorage.setItem('@desafio-falife:logged', 'true');
