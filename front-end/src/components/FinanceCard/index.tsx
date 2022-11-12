@@ -1,6 +1,6 @@
 
-import React from 'react';
-
+import React, { useEffect, useState } from 'react';
+import api from '../../services/api';
 import { Container}  from './styles';
 
 interface IFinanceCard {
@@ -9,10 +9,11 @@ interface IFinanceCard {
     amont: number;
 }
 
-
 const FinanceCard: React.FC<IFinanceCard> = ({
     title, description, amont
-}) => (
+}) => {
+        
+    return(
     <Container>
         <div>
             <span>{title}</span>
@@ -24,7 +25,6 @@ const FinanceCard: React.FC<IFinanceCard> = ({
         
     </Container>
     
-);
-
+);}
 
 export default FinanceCard;
