@@ -1,4 +1,4 @@
-
+import { useNavigate  } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 import { Container}  from './styles';
@@ -12,7 +12,7 @@ interface IFinanceCard {
 const FinanceCard: React.FC<IFinanceCard> = ({
     title, description, amont
 }) => {
-        
+
     return(
     <Container>
         <div>

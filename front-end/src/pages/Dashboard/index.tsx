@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FinanceCard from '../../components/FinanceCard';
 import HeaderCreate from '../../components/HeaderCreate';
 import Summary from '../../components/Summary';
-import { Container, Content } from './styles';
+import { Container, Content, Form } from './styles';
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -13,10 +13,35 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import api from '../../services/api';
 import { strict } from 'assert';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
 
+    const navigate = useNavigate();
     const [post, setPost] = React.useState([]);
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [amount, setAmount] = useState('');
+
+    async function handleRegister(e: any){
+        e.preventDefault();
+    
+        const date = {
+            title,
+            description,
+            amount
+        };
+    
+        try {
+    
+            const response = await api.post('transaction', date);
+            navigate("/");
+            alert("Salvo com sucesso!")
+    
+        }catch(err) {
+            alert("Deu erro")
+        }
+    }
     
     React.useEffect(() => {
         api.get("transaction").then((response) => {
@@ -59,6 +84,7 @@ const Dashboard: React.FC = () => {
                 <Content>
                 {post.map(post => (
                     <FinanceCard
+                    key={post['id']}
                     title={post['title']}
                     description={post['description']}
                     amont={post['amount']}
@@ -76,10 +102,22 @@ const Dashboard: React.FC = () => {
                     <DialogTitle>
                         Registrando uma transação
                     </DialogTitle>
-                    <Input placeholder='Titulo'/>
-                    <Input placeholder='Descrição'/>
-                    <Input placeholder='Valor' type="number"/>
-                    <Button onClick={handleClose} >Salvar</Button>
+                    <Form onSubmit={handleRegister}>
+                        <Input 
+                        placeholder='Titulo'
+                        onChange={e => setTitle(e.target.value)}
+                        />
+                        <Input
+                        placeholder='Descrição'
+                        onChange={e => setDescription(e.target.value)}
+                        />
+                        <Input 
+                        placeholder='Valor' 
+                        type="number"
+                        onChange={e => setAmount(e.target.value)}
+                        />
+                        <Button type='submit' onClick={handleClose} >Salvar</Button>
+                    </Form>
                 </DialogContent>
             </Dialog>
         </div>

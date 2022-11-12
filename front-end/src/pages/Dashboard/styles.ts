@@ -8,4 +8,7 @@ export const Content = styled.div`
     flex-wrap: wrap;
 `;
 
-
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
