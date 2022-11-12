@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate  } from 'react-router-dom';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
 import api from '../../services/api';
 import { Aside, AsideA, AsideTitle, BoxLogin, Container, Form, Main, Texta, Textp, TextTitles } from './styles';
 
 const Register: React.FC = () => {
+
+    const navigate = useNavigate();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -23,6 +26,7 @@ const Register: React.FC = () => {
         try {
 
             const response = await api.post('user', date);
+            navigate("/");
             alert("Salvo com sucesso!")
 
         }catch(err) {
