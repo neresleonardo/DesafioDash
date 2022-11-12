@@ -8,6 +8,9 @@ export const Container = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media(max-width: 600px){
+        flex-direction: column;
+    }
 `
 
 export const Aside = styled.aside`
@@ -21,6 +24,12 @@ export const Aside = styled.aside`
     background: #5531f3;
     border-top-right-radius: 70px;
     border-bottom-right-radius: 70px;
+    @media(max-width: 600px){
+        width: 100%;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
 `
 export const Form = styled.form`
     display: flex;
@@ -38,6 +47,9 @@ export const AsideA = styled.text`
     font-size: 1rem;
     color: white;
     padding: 10px;
+    @media(max-width: 600px){
+        font-size: 0.7rem;
+    }
 `
 
 export const Main = styled.main`
@@ -49,12 +61,18 @@ export const Main = styled.main`
     justify-content: center;
     align-items: center;
     text-align: center;
+    @media(max-width: 600px){
+        width: 100%;
+    }
 `
 
 export const BoxLogin = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
+    @media(max-width: 600px){
+        width: 80%;
+    }
 `
 
 export const TextTitles = styled.text`

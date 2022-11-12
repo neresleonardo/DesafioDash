@@ -11,7 +11,7 @@ const Routes: React.FC = () => {
     
     return (
         <BrowserRouter>
-            { logged ? <Auth /> :  <App/>  }
+            { logged ? <App/> : <Auth /> }
         </BrowserRouter>
     );
 }

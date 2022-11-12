@@ -3,15 +3,13 @@ import React, {useState} from 'react';
 
 import {
     MdDashboard,
-    MdArrowDownward,
-    MdArrowUpward,
     MdExitToApp,
 } from 'react-icons/md';
+import { useAuth } from '../../hooks/auth';
 
 import { 
     Container,
     Header,
-    Title,
     MenuContainer,
     MenuItemLink,
     MenuItemButton,
@@ -24,6 +22,7 @@ import {
 
   export function Aside() {
 
+    const { signOut } = useAuth();
     const [toggleMenuIsOpened, ] = useState(false);
 
     return (
@@ -56,7 +55,7 @@ import {
                     Configurações
                 </MenuItemLink>
 
-                <MenuItemButton>
+                <MenuItemButton onClick={signOut}>
                     <MdExitToApp />
                     Sair
                 </MenuItemButton>

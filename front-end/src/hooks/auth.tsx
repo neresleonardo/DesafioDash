@@ -6,11 +6,15 @@ interface IAuthContext {
     signOut(): void;
 }
 
+interface IAuthProvider {
+    children: React.ReactNode;
+}
+
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
-const AuthProvider: React.FC<any> = ({ children }) => {
+const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     const [logged, setLogged] = useState<boolean>(() => {
-        const isLogged = localStorage.getItem('@desafio-falive:logged:logged');
+        const isLogged = localStorage.getItem('@desafio-falife:logged');
 
         return !!isLogged;
     });
@@ -18,7 +22,7 @@ const AuthProvider: React.FC<any> = ({ children }) => {
     // Usuário
     const signIn = (email: string, password: string) => {
         if(email === 'leonardo@gmail.com' && password === '123'){
-            localStorage.setItem('@desafio-falive:logged', 'true');
+            localStorage.setItem('@desafio-falife:logged', 'true');
             setLogged(true);
         }else{
             alert('Senha ou usuário inválidos!');
@@ -26,7 +30,7 @@ const AuthProvider: React.FC<any> = ({ children }) => {
     }
 
     const signOut = () => {
-        localStorage.removeItem('@desafio-falive:logged:logged');
+        localStorage.removeItem('@desafio-falife:logged');
         setLogged(false);
     }
 
