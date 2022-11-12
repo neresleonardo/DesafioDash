@@ -12,7 +12,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-const Dashboard: React.FC = () => {
+const Config: React.FC = () => {
 
     const [open, setOpen] = React.useState(false);
 
@@ -27,28 +27,9 @@ const Dashboard: React.FC = () => {
         <div>
             <Container>
                 <Content>
-                    <HeaderCreate handleClickOpen={handleClickOpen} titulo="Ganhos e dívidas" />
+                    <HeaderCreate handleClickOpen={handleClickOpen} titulo="Configuração" />
                 </Content>
-                <Content>
-                    <Summary
-                    title='Entrada'
-                    label='Ola amigos'
-                    ></Summary>
-
-                    <Summary
-                    title='Sainda'
-                    label='Ola amigos'
-                    ></Summary>
-
-                    <Summary
-                    title='Total'
-                    label='Ola amigos'
-                    ></Summary>
-                </Content>
-                <Content>
-                    <FinanceCard></FinanceCard>
-                    <FinanceCard></FinanceCard>
-                </Content>
+                
             </Container>
 
             <Dialog
@@ -58,16 +39,15 @@ const Dashboard: React.FC = () => {
             >
                 <DialogContent>
                     <DialogTitle>
-                        Registrando uma transação
+                        Escreva uma anotação
                     </DialogTitle>
                     <Input placeholder='Titulo'/>
-                    <Input placeholder='Descrição'/>
-                    <Input placeholder='Valor' type="number"/>
-                    <Button onClick={handleClose} >Salvar</Button>
+                    <Input type="text" placeholder='Descrição'/>
+                    <Button onClick={handleClose} >Salvar anotação</Button>
                 </DialogContent>
             </Dialog>
         </div>
     );
 }
 
-export default Dashboard;
+export default Config;

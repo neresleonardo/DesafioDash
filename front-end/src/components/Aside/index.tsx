@@ -51,7 +51,7 @@ import {
                     Anotações
                 </MenuItemLink>
 
-                <MenuItemLink href="/">
+                <MenuItemLink href="/config">
                     <MdDashboard />
                     Configurações
                 </MenuItemLink>

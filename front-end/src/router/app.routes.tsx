@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import Layout from '../components/Layout';
 import Annotation from '../pages/Annotation';
+import Config from '../pages/Config';
 import Dashboard from '../pages/Dashboard';
 
 const AppRoutes: React.FC = () => (
@@ -10,6 +11,7 @@ const AppRoutes: React.FC = () => (
         <Routes>
             <Route path="/" element={<Dashboard/>} />
             <Route path="/annotation" element={<Annotation/>} />
+            <Route path="/config" element={<Config/>} />
         </Routes>
     </Layout>
 );

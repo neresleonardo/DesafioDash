@@ -1,27 +1,24 @@
 import React, { useMemo } from 'react';
 import CountUp from 'react-countup';
-
-// img
-import dolarImg from '../../assets/dollar.svg';
-import arrowUpImg from '../../assets/arrow-up.svg';
-import arrowDownImg from '../../assets/arrow-down.svg';
-
-
 import { Container }  from './styles';
 
+interface ISummart {
+    title: string;
+    label: string;
+}
 
-const Summart: React.FC<any> = ({
+const Summart: React.FC<ISummart> = ({
+    title,
+    label,
 }) => {
-
 
     return (
         <Container>
-            <span>Saldo</span>
+            <span>{title}</span>
             <h1>
                 <strong>R$ 1000 </strong>
             </h1>
-            <small>Gaste menos</small>
-            {/* <img src={iconSelected} alt={title} /> */}
+            <small>{label}</small>
         </Container>
     );
 }
