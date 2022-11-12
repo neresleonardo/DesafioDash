@@ -26,6 +26,7 @@ export const Aside = styled.aside`
     border-bottom-right-radius: 70px;
     @media(max-width: 600px){
         width: 100%;
+        height: 40vh;
         border-top-right-radius: 0px;
         border-bottom-right-radius: 50px;
         border-bottom-left-radius: 50px;
@@ -91,6 +92,13 @@ export const Texta = styled.text`
     font-size: 1rem;
     padding: 10px;
     color: #c6c6c6;
+    cursor: pointer;
+`
+
+export const Textah = styled.a`
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff;
     cursor: pointer;
 `
 
