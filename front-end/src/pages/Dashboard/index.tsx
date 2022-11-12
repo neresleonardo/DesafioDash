@@ -11,8 +11,19 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import api from '../../services/api';
+import { strict } from 'assert';
 
 const Dashboard: React.FC = () => {
+
+    const [post, setPost] = React.useState([]);
+    
+    React.useEffect(() => {
+        api.get("transaction").then((response) => {
+          setPost(response.data);
+          console.log(">>>",response.data);
+        });
+      }, []);
 
     const [open, setOpen] = React.useState(false);
 
@@ -46,16 +57,13 @@ const Dashboard: React.FC = () => {
                     ></Summary>
                 </Content>
                 <Content>
+                {post.map(post => (
                     <FinanceCard
-                    title='Carro'
-                    description='Parcela numero 1'
-                    amont={1230}
+                    title={post['title']}
+                    description={post['description']}
+                    amont={post['amount']}
                     ></FinanceCard>
-                    <FinanceCard
-                    title='Netflix'
-                    description='Mensalmente'
-                    amont={50}
-                    ></FinanceCard>
+                ))}
                 </Content>
             </Container>
 
