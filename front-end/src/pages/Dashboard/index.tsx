@@ -46,8 +46,16 @@ const Dashboard: React.FC = () => {
                     ></Summary>
                 </Content>
                 <Content>
-                    <FinanceCard></FinanceCard>
-                    <FinanceCard></FinanceCard>
+                    <FinanceCard
+                    title='Carro'
+                    description='Parcela numero 1'
+                    amont={1230}
+                    ></FinanceCard>
+                    <FinanceCard
+                    title='Netflix'
+                    description='Mensalmente'
+                    amont={50}
+                    ></FinanceCard>
                 </Content>
             </Container>
 

@@ -3,14 +3,22 @@ import React from 'react';
 
 import { Container}  from './styles';
 
+interface IFinanceCard {
+    title: string;
+    description: string;
+    amont: number;
+}
 
-const FinanceCard: React.FC = () => (
+
+const FinanceCard: React.FC<IFinanceCard> = ({
+    title, description, amont
+}) => (
     <Container>
         <div>
-            <span>Conta de luz</span>
-            <small>Conta de luz para pagar até dia 12/21</small>
+            <span>{title}</span>
+            <small>{description}</small>
         </div>        
-        <h3>1000</h3>
+        <h3>{amont}</h3>
 
         
         

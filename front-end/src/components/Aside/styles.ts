@@ -121,7 +121,7 @@ export const MenuItemLink = styled.a`
 
 export const MenuItemButton = styled.button`
     font-size: 16px;
-    color: white;
+    color: #a0a5b1;
     
     border: none;
     background: none;

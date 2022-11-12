@@ -26,9 +26,6 @@ const Config: React.FC = () => {
     return (
         <div>
             <Container>
-                <Content>
-                    <HeaderCreate handleClickOpen={handleClickOpen} titulo="Configuração" />
-                </Content>
                 
             </Container>
 
