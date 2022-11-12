@@ -1,12 +1,13 @@
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors"
+import { routes } from "./routes";
 
 const app = express()
 
 // Usando o formato Json
 app.use(express.json())
 // Colocando as rotas 
-
+app.use(routes)
 // Tratando as excerções
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
@@ -22,6 +23,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
     })
 })
 
-app.listen(3000, () => {
-    console.log("Correndo em 3000");  
+app.listen(3002, () => {
+    console.log("Correndo em 3002");  
 })

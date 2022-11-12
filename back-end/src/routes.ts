@@ -1,0 +1,20 @@
+import { Router } from "express";
+import { CreateClientController } from "./module/user/userCases/createUser/CreateUserController";
+
+
+const routes = Router();
+
+//////////////////////// Chamada //////////////////////////
+
+//Criando um Usuário
+const createUserController = new CreateClientController();
+
+////////////////////////////////////////////////////////////////
+
+//////////////////////POST GET PUT DELETE ///////////////////////
+
+routes.post("/user/", createUserController.handle);
+
+//////////////////////////////////////////////////////////////////////////
+
+export { routes };

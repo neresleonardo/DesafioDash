@@ -11,7 +11,6 @@ const Layout: React.FC<any> = ( {children}) => {
         <Grid>
             <MainHeader/>
             <Aside/>
-
             <Content>
             {children}
             </Content>
