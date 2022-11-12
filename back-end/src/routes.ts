@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { AuthenticateUserController } from "./module/account/authenticateUser/AuthenticateUserController";
 import { CreateClientController } from "./module/user/userCases/createUser/CreateUserController";
 
 
@@ -8,6 +9,7 @@ const routes = Router();
 
 //Criando um Usuário
 const createUserController = new CreateClientController();
+const authenticateUserController = new AuthenticateUserController();
 
 ////////////////////////////////////////////////////////////////
 
@@ -15,6 +17,8 @@ const createUserController = new CreateClientController();
 
 routes.post("/user/", createUserController.handle);
 
+
+routes.post("/auth/", authenticateUserController.handle)
 //////////////////////////////////////////////////////////////////////////
 
 export { routes };
