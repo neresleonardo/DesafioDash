@@ -40,9 +40,10 @@ export const Header = styled.header`
 export const LogImg = styled.img`
     height: 60px;
     width: 60px;
-    background-color: #ff007a;
+    background: url("https://avatars.githubusercontent.com/u/14266075?v=4");
+    background-size: cover;
     border-radius: 60px;
-    border: 0;
+    border: 2px solid #e91e63;
     padding: 0;
     @media(max-width: 600px){        
         display: none;
