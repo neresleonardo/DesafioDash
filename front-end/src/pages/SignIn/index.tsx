@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import { Aside, AsideA, AsideTitle, BoxLogin, Container, Main, Texta, Textp, TextTitles } from './styles';
+import { useAuth } from '../../hooks/auth';
+import { Aside, AsideA, AsideTitle, BoxLogin, Container, Form, Main, Texta, Textp, TextTitles } from './styles';
 
 const SignIn: React.FC = () => {
+
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');    
+
+    const { signIn } = useAuth();
+    
     return(
         <div>
             <Container>
@@ -17,26 +24,30 @@ const SignIn: React.FC = () => {
                 </Aside>
                 <Main>
                     <BoxLogin> 
-                        <TextTitles>
-                            Seja bem-vindo(a)
-                        </TextTitles>
-                        <Textp>
-                            flexível e gratuita de organizar planos, projetos e mais.
-                        </Textp>
-                        <Input
-                         type="email"
-                         placeholder="E-mail"
-                         required
-                         />
-                        <Input
-                        type="password"
-                        placeholder="Senha"
-                        required
-                        />
-                        <Button>Entrar</Button>
-                        <Texta>
-                            Esqueceu sua senha?
-                        </Texta>
+                        <Form onSubmit={() => signIn(email, password)}>
+                            <TextTitles>
+                                Seja bem-vindo(a)
+                            </TextTitles>
+                            <Textp>
+                                flexível e gratuita de organizar planos, projetos e mais.
+                            </Textp>
+                            <Input
+                            type="email"
+                            placeholder="E-mail"
+                            required
+                            onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <Input
+                            type="password"
+                            placeholder="Senha"
+                            required
+                            onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <Button type="submit">Entrar</Button>
+                            <Texta>
+                                Esqueceu sua senha?
+                            </Texta>
+                        </Form>
                     </BoxLogin>
                 </Main>
             </Container>

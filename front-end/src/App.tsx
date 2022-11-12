@@ -1,17 +1,19 @@
 import React from 'react';
-import Dashboard from './pages/Dashboard';
-import Register from './pages/Register';
-import SignIn from './pages/SignIn';
+import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
+
+
 import Routes from './router';
 
-function App() {
-  return (
-    <div className="App">
-      <GlobalStyles />
-      <Routes/>
-    </div>
-  );
+
+const App: React.FC = () => {
+    
+    return (
+        <div>
+            <GlobalStyles />
+            <Routes/>
+        </div>
+    );
 }
 
 export default App;

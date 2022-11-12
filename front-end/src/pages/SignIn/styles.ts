@@ -22,6 +22,10 @@ export const Aside = styled.aside`
     border-top-right-radius: 70px;
     border-bottom-right-radius: 70px;
 `
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
 
 export const AsideTitle = styled.text`
     font-size: 5rem;

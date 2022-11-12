@@ -12,7 +12,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-const Dashboard: React.FC = () => {
+const Annotation: React.FC = () => {
 
     const [open, setOpen] = React.useState(false);
 
@@ -27,19 +27,9 @@ const Dashboard: React.FC = () => {
         <div>
             <Container>
                 <Content>
-                    <HeaderCreate handleClickOpen={handleClickOpen} titulo="Ganhos e dívidas" />
+                    <HeaderCreate handleClickOpen={handleClickOpen} titulo="Anotações" />
                 </Content>
-                <Content>
-                    <Summary></Summary>
-
-                    <Summary></Summary>
-
-                    <Summary></Summary>
-                </Content>
-                <Content>
-                    <FinanceCard></FinanceCard>
-                    <FinanceCard></FinanceCard>
-                </Content>
+                
             </Container>
 
             <Dialog
@@ -49,16 +39,15 @@ const Dashboard: React.FC = () => {
             >
                 <DialogContent>
                     <DialogTitle>
-                        Registrando uma transação
+                        Escreva uma anotação
                     </DialogTitle>
                     <Input placeholder='Titulo'/>
-                    <Input placeholder='Descrição'/>
-                    <Input placeholder='Valor' type="number"/>
-                    <Button onClick={handleClose} >Salvar</Button>
+                    <Input type="text" placeholder='Descrição'/>
+                    <Button onClick={handleClose} >Salvar anotação</Button>
                 </DialogContent>
             </Dialog>
         </div>
     );
 }
 
-export default Dashboard;
+export default Annotation;

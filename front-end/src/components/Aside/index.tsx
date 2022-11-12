@@ -46,7 +46,7 @@ import {
                     Dashboard
                 </MenuItemLink>
 
-                <MenuItemLink href="/">
+                <MenuItemLink href="/annotation">
                     <MdDashboard />
                     Anotações
                 </MenuItemLink>
