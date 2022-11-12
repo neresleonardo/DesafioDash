@@ -15,4 +15,16 @@ model User {
   password  String
 
   @@map("user")
+  // transfers Transfers[]
+}
+
+model Transfers {
+  id          String  @id @default(uuid()) 
+  // id_user   String 
+  // user        User    @relation(fields: [id_user], references: [id])
+  title       String
+  description String
+  amount      String
+
+  @@map("transfers")
 }

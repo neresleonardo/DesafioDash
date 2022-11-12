@@ -30,6 +30,11 @@ export const AsideTitle = styled.text`
     padding: 10px;
 `
 
+export const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
+
 export const AsideA = styled.text`
     font-size: 1rem;
     color: white;

@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/Button';
 import Input from '../../components/Input';
-import { Aside, AsideA, AsideTitle, BoxLogin, Container, Main, Texta, Textp, TextTitles } from './styles';
+import api from '../../services/api';
+import { Aside, AsideA, AsideTitle, BoxLogin, Container, Form, Main, Texta, Textp, TextTitles } from './styles';
 
 const Register: React.FC = () => {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    async function handleRegister(e: any){
+        e.preventDefault();
+
+        const date = {
+            email,
+            password,
+            name
+        };
+
+        try {
+
+            const response = await api.post('user', date);
+            alert("Salvo com sucesso!")
+
+        }catch(err) {
+            alert("Deu erro")
+        }
+    }
+
     return(
         <div>
             <Container>
@@ -20,22 +46,27 @@ const Register: React.FC = () => {
                         <TextTitles>
                             Registro
                         </TextTitles>
+                        <Form onSubmit={handleRegister}>
+                        <Input
+                         type="text"
+                         placeholder="Seu nome"
+                         required
+                         onChange={e => setName(e.target.value)}
+                         />
                         <Input
                          type="email"
-                         placeholder="Crie um e-mail"
+                         placeholder="Seu email"
                          required
+                         onChange={e => setEmail(e.target.value)}
                          />
                         <Input
                         type="password"
                         placeholder="Crie uma senha"
                         required
-                        />
-                        <Input
-                        type="password"
-                        placeholder="Confirme sua senha"
-                        required
+                        onChange={e => setPassword(e.target.value)}
                         />
                         <Button>Registrar</Button>
+                        </Form>
                     </BoxLogin>
                 </Main>
             </Container>
