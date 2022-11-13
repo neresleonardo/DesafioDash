@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 import {
     MdDashboard,
     MdExitToApp,
+    MdClose,
+    MdMenu,
 } from 'react-icons/md';
 import { useAuth } from '../../hooks/auth';
 
@@ -18,12 +20,17 @@ import {
     ProfileName,
     ProfileNameText,
     ProfileNameP,
+    ToggleMenu,
 }  from './styles';
 
   export function Aside() {
 
     const { signOut } = useAuth();
-    const [toggleMenuIsOpened, ] = useState(false);
+    const [toggleMenuIsOpened, setToggleMenuIsOpened ] = useState(false);
+
+    const handleToggleMenu = () => {
+        setToggleMenuIsOpened(!toggleMenuIsOpened);
+    }
 
     return (
         <Container menuIsOpen={toggleMenuIsOpened}>
@@ -36,9 +43,14 @@ import {
                     <ProfileNameText>Leonardo </ProfileNameText>
                     <ProfileNameP>Programador</ProfileNameP>
                 </ProfileName>
+
+                <ToggleMenu onClick={handleToggleMenu}>
+                { toggleMenuIsOpened ? <MdClose /> : <MdMenu /> }
+                </ToggleMenu>
             </Header>
 
             <MenuContainer>
+
                 <MenuLabel>Menu</MenuLabel>
                 <MenuItemLink href="/">
                     <MdDashboard />
