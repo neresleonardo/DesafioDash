@@ -2,12 +2,12 @@ import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.li`
     width: 100% ;
-    background-color: #40486d;
+    background-color: #40486D;
     color:white;
     list-style: none;
     border-radius: 10px;
-    margin: 10px 0;
-    padding: 12px 10px;
+    margin: 5px 0;
+    padding: 8px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,7 +21,7 @@ export const Container = styled.li`
         padding-left: 10px;    
     }
     > div span {
-        font-size: 22px;
+        font-size: 1rem;
         font-weight: 500;
     }
     

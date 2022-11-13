@@ -1,39 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from './styles';
-
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Toggle from '../../components/Toggle'
+import { useTheme } from '../../hooks/theme';
 
 const Config: React.FC = () => {
 
-    const [open, setOpen] = React.useState(false);
+    const { toggleTheme, theme } = useTheme();
 
-    const handleClose = () => {
-        setOpen(false);
-    };
+    const [darkTheme, setDarkTheme] = useState(() => theme.title === 'dark' ? true : false);
+
+    const handleChangeTheme = () => {
+        setDarkTheme(!darkTheme);
+        toggleTheme();
+    }
+
     return (
         <div>
             <Container>
-                
+                <Toggle 
+                labelLeft="Claro"
+                labelRight="Escuro"
+                checked={darkTheme}
+                onChange={handleChangeTheme}
+                />
             </Container>
 
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="draggable-dialog-title"
-            >
-                <DialogContent>
-                    <DialogTitle>
-                        Escreva uma anotação
-                    </DialogTitle>
-                    <Input placeholder='Titulo'/>
-                    <Input type="text" placeholder='Descrição'/>
-                    <Button onClick={handleClose} >Salvar anotação</Button>
-                </DialogContent>
-            </Dialog>
+          
         </div>
     );
 }

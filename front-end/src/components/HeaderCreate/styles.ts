@@ -20,7 +20,7 @@ export const Aside = styled.div`
 
 export const TextH4 = styled.h4`
     font-size: 2rem;
-    color: #40486d;
+    color: ${props => props.theme.colors.white};
     font-weight: bold;
     padding-bottom: 10px;
 `

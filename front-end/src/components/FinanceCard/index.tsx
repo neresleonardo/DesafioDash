@@ -19,7 +19,7 @@ const FinanceCard: React.FC<IFinanceCard> = ({
             <span>{title}</span>
             <small>{description}</small>
         </div>        
-        <h3>{amont}</h3>
+        <h3>R$ {amont}</h3>
 
         
         

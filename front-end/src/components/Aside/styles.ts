@@ -11,9 +11,8 @@ interface IThemeToggleFooterProps {
 export const Container = styled.div<IContainerProps>`
     grid-area: AS;
     
-    background-color:#fafafa;
+    background-color:${props => props.theme.colors.primary};
     padding-left: 20px;
-    border-right: 0.6px solid #ccc;
     position: relative;
     @media(max-width: 600px){
         padding-left: 20px;
@@ -43,7 +42,7 @@ export const LogImg = styled.img`
     background: url("https://avatars.githubusercontent.com/u/14266075?v=4");
     background-size: cover;
     border-radius: 60px;
-    border: 2px solid #e91e63;
+    border: 2px solid ${props => props.theme.colors.box};
     padding: 0;
     @media(max-width: 600px){        
         display: none;
@@ -61,7 +60,7 @@ export const ProfileName = styled.div`
 export const ProfileNameText = styled.text`
    font-size: 1rem;
    margin-left: 5px;
-   color: #40486d;
+   color: ${props => props.theme.colors.white};
    font-weight: bold;
     @media(max-width: 600px){        
         display: none;
@@ -71,7 +70,7 @@ export const ProfileNameText = styled.text`
 export const ProfileNameP = styled.text`
    font-size: 0.7rem;
    margin-left: 5px;
-   color: #40486d;
+   color: ${props => props.theme.colors.box};
    font-weight: bold;
     @media(max-width: 600px){        
         display: none;
@@ -104,6 +103,7 @@ export const MenuContainer = styled.nav`
 
 export const MenuItemLink = styled.a`
     color: #a0a5b1;
+    color: ${props => props.theme.colors.white};
     text-decoration: none;
     margin: 7px 0;
     display: flex;
@@ -112,6 +112,7 @@ export const MenuItemLink = styled.a`
     transition: opacity .3s;
     &:hover {
         opacity: .7;
+        color: ${props => props.theme.colors.box};
     }
     > svg {
         font-size: 30px;

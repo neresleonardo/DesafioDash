@@ -65,7 +65,7 @@ const Dashboard: React.FC = () => {
                 <Content>
                     <HeaderCreate handleClickOpen={handleClickOpen} titulo="Ganhos e dívidas" />
                 </Content>
-                <Content>
+                {/* <Content>
                     <Summary
                     title='Entrada'
                     label='Ola amigos'
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
                     title='Total'
                     label='Ola amigos'
                     ></Summary>
-                </Content>
+                </Content> */}
                 <Content>
                 {post.map(post => (
                     <FinanceCard

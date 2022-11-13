@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    background-color: ${props => props.theme.colors.secondary};
     grid-area: CT;
     color: white;
     padding: 25px;  
@@ -10,10 +11,10 @@ export const Container = styled.div`
         width: 10px;
     }
     ::-webkit-scrollbar-thumb {
-        background-color: blue;
+        background-color: white;
         border-radius: 10px;
     }
     ::-webkit-scrollbar-track {
-        background-color: blue;
+        background-color: white;
     }
 `;

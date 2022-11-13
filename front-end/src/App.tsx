@@ -4,15 +4,18 @@ import GlobalStyles from './styles/GlobalStyles';
 
 
 import Routes from './router';
+import { useTheme } from './hooks/theme';
 
 
 const App: React.FC = () => {
+
+    const {theme} = useTheme();
     
     return (
-        <div>
+        <ThemeProvider theme={theme}>
             <GlobalStyles />
             <Routes/>
-        </div>
+        </ThemeProvider>
     );
 }
 
