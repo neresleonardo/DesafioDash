@@ -1,16 +1,33 @@
 import { useNavigate  } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
-import { Container}  from './styles';
+import { ButtonDelete, Container, Row}  from './styles';
+
+import {
+    MdDelete
+} from 'react-icons/md';
 
 interface IFinanceCard {
+    id: string;
     title: string;
     description: string;
     amont: number;
 }
 
+async function handleDelete(id:string){
+    try {
+
+        const response = await api.delete(`deletetransaction/${id}`);
+        
+        alert("deletado" + id)
+
+    }catch(err) {
+        alert("Deu erro ao deletar")
+    }
+}
+
 const FinanceCard: React.FC<IFinanceCard> = ({
-    title, description, amont
+    title, description, amont, id
 }) => {
 
     return(
@@ -18,11 +35,13 @@ const FinanceCard: React.FC<IFinanceCard> = ({
         <div>
             <span>{title}</span>
             <small>{description}</small>
-        </div>        
+        </div>
+        <Row>
         <h3>R$ {amont}</h3>
-
-        
-        
+        <ButtonDelete onClick={() => handleDelete(id)}>
+            <MdDelete/>
+        </ButtonDelete>
+        </Row>      
     </Container>
     
 );}

@@ -27,3 +27,15 @@ export const Container = styled.li`
     
     
 `;
+
+export const Row = styled.div`
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row !important;
+`;
+
+export const ButtonDelete = styled.button`
+    color:${props => props.theme.colors.warning};
+    background-color: transparent;
+`;

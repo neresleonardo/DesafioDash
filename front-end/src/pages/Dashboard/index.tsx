@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FinanceCard from '../../components/FinanceCard';
 import HeaderCreate from '../../components/HeaderCreate';
 import { Container, Content, Form } from './styles';
@@ -18,6 +18,7 @@ const Dashboard: React.FC = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState('');
+    const [id, setId] = useState('');
 
     async function handleRegister(e: any){
         e.preventDefault();
@@ -25,7 +26,8 @@ const Dashboard: React.FC = () => {
         const date = {
             title,
             description,
-            amount
+            amount,
+            id
         };
     
         try {
@@ -39,12 +41,17 @@ const Dashboard: React.FC = () => {
         }
     }
     
+    const getdataTransaction = () => {
+            api.get("transaction").then((response) => {
+              setPost(response.data);
+              console.log(">>>",response.data);
+            });
+    }
+
     React.useEffect(() => {
-        api.get("transaction").then((response) => {
-          setPost(response.data);
-          console.log(">>>",response.data);
-        });
-      }, []);
+        getdataTransaction()
+    })
+
 
     const [open, setOpen] = React.useState(false);
 
@@ -54,6 +61,7 @@ const Dashboard: React.FC = () => {
 
     const handleClose = () => {
         setOpen(false);
+        getdataTransaction();
     };
     return (
         <div>
@@ -80,6 +88,7 @@ const Dashboard: React.FC = () => {
                 <Content>
                 {post.map(post => (
                     <FinanceCard
+                    id={post['id']}
                     key={post['id']}
                     title={post['title']}
                     description={post['description']}
