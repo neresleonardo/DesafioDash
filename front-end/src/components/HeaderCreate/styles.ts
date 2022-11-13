@@ -16,6 +16,11 @@ export const Aside = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 25px; 
+    @media(max-width: 620px){
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export const TextH4 = styled.h4`
@@ -23,6 +28,10 @@ export const TextH4 = styled.h4`
     color: ${props => props.theme.colors.white};
     font-weight: bold;
     padding-bottom: 10px;
+    @media(max-width: 620px){
+        
+       
+    }
 `
 
 export const Textp = styled.p`
@@ -41,5 +50,9 @@ export const ButtonCreate = styled.button`
     transition: opacity .3s;
     &:hover{
         opacity: .7;
+    }
+    @media(max-width: 620px){
+        width: 100%;
+        flex-direction: row-reverse;
     }
 `

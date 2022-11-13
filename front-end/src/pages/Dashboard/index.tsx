@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import FinanceCard from '../../components/FinanceCard';
 import HeaderCreate from '../../components/HeaderCreate';
-import Summary from '../../components/Summary';
 import { Container, Content, Form } from './styles';
 
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import api from '../../services/api';
-import { strict } from 'assert';
 import { useNavigate } from 'react-router-dom';
 
 const Dashboard: React.FC = () => {
