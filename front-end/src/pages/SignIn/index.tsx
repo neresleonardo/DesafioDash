@@ -26,7 +26,7 @@ const SignIn: React.FC = () => {
                 </Aside>
                 <Main>
                     <BoxLogin>
-                        <Form onSubmit={() => signIn(email, password)}>
+                        <Form onSubmit={(e) =>signIn(e,email, password)}>
                             <TextTitles>
                                 Seja bem-vindo(a)
                             </TextTitles>
@@ -45,12 +45,12 @@ const SignIn: React.FC = () => {
                                 required
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <Button type="submit">Entrar</Button>
+                            <Button type='submit'>Entrar</Button>
 
                         </Form>
                         
                         <Textah href='/register'>
-                        <Button type="submit">Criar uma conta</Button>
+                        <Button>Criar uma conta</Button>
                         </Textah>
                         <Texta>
                             Esqueceu sua senha?

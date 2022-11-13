@@ -3,7 +3,7 @@ import api from '../services/api';
 
 interface IAuthContext {
     logged: boolean;
-    signIn(email: string, password: string): void;
+    signIn(e: any, email: string, password: string): void;
     signOut(): void;
 }
 
@@ -11,8 +11,9 @@ interface IAuthProvider {
     children: React.ReactNode;
 }
 
-async function handleAuth( email: string, password: string){
+async function handleAuth(e: any,email: string, password: string){
 
+    e.preventDefault();
     const data = {
         email,
         password,
@@ -21,11 +22,10 @@ async function handleAuth( email: string, password: string){
     try {
 
         const response = await api.post('auth', data);
-              console.log(">>",response)
             return response.data;
 
     }catch(err) {
-        alert("Deu erro")
+        alert("Deu erro");
     }
 }
 
@@ -40,13 +40,15 @@ const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     });
 
     // Usuário
-        const signIn = async (email: string, password: string) => {
+        const signIn = async (e: any, email: string, password: string) => {
+            const result = await handleAuth(e, email, password);
 
-            const result = await handleAuth(email, password);
+            if(result) {
+                localStorage.setItem('@desafio-falife:token', result);
+                localStorage.setItem('@desafio-falife:logged', 'true');
+                setLogged(true);
+            }
 
-            localStorage.setItem('@desafio-falife:token', result);
-            localStorage.setItem('@desafio-falife:logged', 'true');
-             setLogged(true);
 
     }
 

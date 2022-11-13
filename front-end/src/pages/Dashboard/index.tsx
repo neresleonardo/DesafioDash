@@ -34,7 +34,6 @@ const Dashboard: React.FC = () => {
     
             const response = await api.post('transaction', date);
             navigate("/");
-            alert("Salvo com sucesso!")
     
         }catch(err) {
             alert("Deu erro")
@@ -44,7 +43,6 @@ const Dashboard: React.FC = () => {
     const getdataTransaction = () => {
             api.get("transaction").then((response) => {
               setPost(response.data);
-              console.log(">>>",response.data);
             });
     }
 
@@ -69,22 +67,6 @@ const Dashboard: React.FC = () => {
                 <Content>
                     <HeaderCreate handleClickOpen={handleClickOpen} titulo="Ganhos e dívidas" />
                 </Content>
-                {/* <Content>
-                    <Summary
-                    title='Entrada'
-                    label='Ola amigos'
-                    ></Summary>
-
-                    <Summary
-                    title='Sainda'
-                    label='Ola amigos'
-                    ></Summary>
-
-                    <Summary
-                    title='Total'
-                    label='Ola amigos'
-                    ></Summary>
-                </Content> */}
                 <Content>
                 {post.map(post => (
                     <FinanceCard

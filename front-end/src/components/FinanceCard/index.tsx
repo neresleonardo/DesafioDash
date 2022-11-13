@@ -18,8 +18,6 @@ async function handleDelete(id:string){
     try {
 
         const response = await api.delete(`deletetransaction/${id}`);
-        
-        alert("deletado" + id)
 
     }catch(err) {
         alert("Deu erro ao deletar")
@@ -32,7 +30,7 @@ const FinanceCard: React.FC<IFinanceCard> = ({
 
     return(
     <Container>
-        <div>
+        <div >
             <span>{title}</span>
             <small>{description}</small>
         </div>
