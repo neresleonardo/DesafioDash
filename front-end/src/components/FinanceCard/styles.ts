@@ -2,8 +2,8 @@ import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.li`
     width: 100% ;
-    background-color: #40486D;
-    color:white;
+    background-color: ${props => props.theme.colors.primary};
+    color:${props => props.theme.colors.white};
     list-style: none;
     border-radius: 10px;
     margin: 5px 0;

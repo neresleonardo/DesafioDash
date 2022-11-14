@@ -10,6 +10,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Note from '../../components/Note';
 
 const Annotation: React.FC = () => {
 
@@ -27,6 +28,11 @@ const Annotation: React.FC = () => {
             <Container>
                 <Content>
                     <HeaderCreate handleClickOpen={handleClickOpen} titulo="Anotações" />
+                </Content>
+                <Content>
+                    <Note/>
+                    <Note/>
+                    <Note/>
                 </Content>
                 
             </Container>
