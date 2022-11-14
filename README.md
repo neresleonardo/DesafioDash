@@ -11,7 +11,7 @@
 - Dar para apagar uma informação listada (Delete) ✅
 - Toogle que muda a cor do site( claro e escuro) ✅
 - Documentar do projeto ✅
-- Testes no front e back
+- Testes Front
 
 <h1 align="center"> Instalação </h1>
 
