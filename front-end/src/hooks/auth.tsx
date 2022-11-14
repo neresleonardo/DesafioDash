@@ -11,7 +11,7 @@ interface IAuthProvider {
     children: React.ReactNode;
 }
 
-async function handleAuth(e: any,email: string, password: string){
+async function handleAuth(e: any, email: string, password: string) {
 
     e.preventDefault();
     const data = {
@@ -22,17 +22,17 @@ async function handleAuth(e: any,email: string, password: string){
     try {
 
         const response = await api.post('auth', data);
-            return response.data;
+        return response.data;
 
-    }catch(err) {
-        alert("Deu erro");
+    } catch (err) {
+        alert("Usuário ou senha invalida");
     }
 }
 
 const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
-    
+
     const [logged, setLogged] = useState<boolean>(() => {
         const isLogged = localStorage.getItem('@desafio-falife:logged');
 
@@ -40,16 +40,14 @@ const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     });
 
     // Usuário
-        const signIn = async (e: any, email: string, password: string) => {
-            const result = await handleAuth(e, email, password);
+    const signIn = async (e: any, email: string, password: string) => {
+        const result = await handleAuth(e, email, password);
 
-            if(result) {
-                localStorage.setItem('@desafio-falife:token', result);
-                localStorage.setItem('@desafio-falife:logged', 'true');
-                setLogged(true);
-            }
-
-
+        if (result) {
+            localStorage.setItem('@desafio-falife:token', result);
+            localStorage.setItem('@desafio-falife:logged', 'true');
+            setLogged(true);
+        }
     }
 
     const signOut = () => {
@@ -59,7 +57,7 @@ const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     }
 
     return (
-        <AuthContext.Provider value={{logged, signIn, signOut}}>
+        <AuthContext.Provider value={{ logged, signIn, signOut }}>
             {children}
         </AuthContext.Provider>
     );

@@ -15,7 +15,7 @@ export class AuthenticateUserCase {
     // Comparar se está cadastrado no banco de dados com username,
     const client = await prisma.user.findFirst({
         where: {
-            email
+            email,
         }
     })
     //Se username não existir( retonar erro)
@@ -33,6 +33,7 @@ export class AuthenticateUserCase {
         subject: client.id, // passando o id do usuário
         expiresIn: "1d" // Tempo
     })
-    return token;
+    
+    return [token, client] ;
     }
 }

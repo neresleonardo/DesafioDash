@@ -27,6 +27,8 @@ import {
 
     const { signOut } = useAuth();
     const [toggleMenuIsOpened, setToggleMenuIsOpened ] = useState(false);
+    
+    
 
     const handleToggleMenu = () => {
         setToggleMenuIsOpened(!toggleMenuIsOpened);

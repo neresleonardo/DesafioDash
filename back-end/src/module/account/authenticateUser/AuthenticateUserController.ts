@@ -9,8 +9,7 @@ export class AuthenticateUserController {
         const authenticateUserCase = new AuthenticateUserCase();
         const result = await authenticateUserCase.execute({
             email,
-            password
-
+            password,
         })
         return response.json(result);
          }
