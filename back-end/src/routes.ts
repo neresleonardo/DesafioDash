@@ -1,25 +1,34 @@
 import { Router } from "express";
 import { AuthenticateUserController } from "./module/account/authenticateUser/AuthenticateUserController";
-import { DeleteTrasfersController } from "./module/deleteTransfers/DeleteTrasfersController";
-import { FindAllTrasfersController } from "./module/findAllTransfers/FindAllTrasfersController";
-import { CreateTransactionController } from "./module/transfers/TransfersUserController";
+import { DeleteTrasfersController } from "./module/transfers/deleteTransfers/DeleteTrasfersController";
+import { FindAllTrasfersController } from "./module/transfers/findAllTransfers/FindAllTrasfersController";
+import { CreateTransactionController } from "./module/transfers/createTransfers/TransfersUserController";
 import { CreateClientController } from "./module/user/createUser/CreateUserController";
+import { CreateAnnotationsController } from "./module/annotations/createAnnotations/CreateAnnotationsController";
 
 
 const routes = Router();
 
 //////////////////////// Chamada //////////////////////////
 
-//Criando um Usuário
+//Usuário
+
 const createUserController = new CreateClientController();
+
 // Autenticação
+
 const authenticateUserController = new AuthenticateUserController();
-//Criando uma transação
+
+// Transação
+
 const createTransactionController = new CreateTransactionController();
-
 const findAllTrasfersController = new FindAllTrasfersController();
-
 const deleteTrasfersController = new DeleteTrasfersController();
+
+// Anotações
+
+const createAnnotationsController = new CreateAnnotationsController()
+
 
 ////////////////////////////////////////////////////////////////
 
@@ -30,10 +39,10 @@ routes.post("/user/", createUserController.handle);
 routes.post("/auth/", authenticateUserController.handle);
 
 routes.post("/transaction", createTransactionController.handle);
-
 routes.get("/transaction", findAllTrasfersController.handle);
+routes.delete("/deletetransaction/:id", deleteTrasfersController.handle);
 
-routes.delete("/deletetransaction/:id", deleteTrasfersController.handle)
+routes.post("/annotations", createAnnotationsController.handle);
 //////////////////////////////////////////////////////////////////////////
 
 export { routes };

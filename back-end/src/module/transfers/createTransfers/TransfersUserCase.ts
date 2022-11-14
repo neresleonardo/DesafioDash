@@ -1,4 +1,4 @@
-import { prisma } from "../../../src/database/prismaClient";
+import { prisma } from "../../../database/prismaClient";
 
 interface ICreateTransfers {
     title: string;

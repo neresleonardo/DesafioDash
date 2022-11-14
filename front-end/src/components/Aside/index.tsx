@@ -40,7 +40,7 @@ import {
 
                 </LogImg>
                 <ProfileName>
-                    <ProfileNameText>Leonardo </ProfileNameText>
+                    <ProfileNameText>Bem vindo</ProfileNameText>
                     <ProfileNameP>Programador</ProfileNameP>
                 </ProfileName>
 
