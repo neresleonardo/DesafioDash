@@ -93,14 +93,17 @@ const Dashboard: React.FC = () => {
                         <Input 
                         placeholder='Titulo'
                         onChange={e => setTitle(e.target.value)}
+                        maxLength={20}
                         />
                         <Input
                         placeholder='Descrição'
                         onChange={e => setDescription(e.target.value)}
+                        maxLength={30}
                         />
                         <Input 
                         placeholder='Valor' 
                         type="number"
+                        maxLength={4}
                         onChange={e => setAmount(e.target.value)}
                         />
                         <Button type='submit' onClick={handleClose} >Salvar</Button>

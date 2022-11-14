@@ -33,7 +33,6 @@ const createAnnotationsController = new CreateAnnotationsController();
 const findAnnotationController = new FindAnnotationController();
 const deleteAnnotationsController = new DeleteAnnotationsController();
 
-
 ////////////////////////////////////////////////////////////////
 
 //////////////////////POST GET PUT DELETE ///////////////////////

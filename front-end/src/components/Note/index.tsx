@@ -4,6 +4,7 @@ import { Button, Container, Description, HeaderNote, Texth1 } from './styles'
 import {
     MdDelete
 } from 'react-icons/md';
+import api from '../../services/api';
 
 interface INote {
     id: string;
@@ -14,6 +15,16 @@ interface INote {
 const Note: React.FC<INote> = ({
     title, description, id
 }) => {
+
+    async function handleDelete(id:string){
+        try {
+    
+            const response = await api.delete(`deleteannotations/${id}`);
+    
+        }catch(err) {
+            alert("Deu erro ao deletar")
+        }
+    }
     return (
         <Container>
             <div>
@@ -21,7 +32,7 @@ const Note: React.FC<INote> = ({
                     <Texth1>
                         {title}
                     </Texth1>
-                    <Button onClick={() => id}>
+                    <Button onClick={() => handleDelete(id)}>
                         <MdDelete></MdDelete>
                     </Button>
                 </HeaderNote>
