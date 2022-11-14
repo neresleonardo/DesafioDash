@@ -5,6 +5,7 @@ import { FindAllTrasfersController } from "./module/transfers/findAllTransfers/F
 import { CreateTransactionController } from "./module/transfers/createTransfers/TransfersUserController";
 import { CreateClientController } from "./module/user/createUser/CreateUserController";
 import { CreateAnnotationsController } from "./module/annotations/createAnnotations/CreateAnnotationsController";
+import { FindAnnotationController } from "./module/annotations/findAllAnnotations/FindAnnotationController";
 
 
 const routes = Router();
@@ -27,7 +28,8 @@ const deleteTrasfersController = new DeleteTrasfersController();
 
 // Anotações
 
-const createAnnotationsController = new CreateAnnotationsController()
+const createAnnotationsController = new CreateAnnotationsController();
+const findAnnotationController = new FindAnnotationController();
 
 
 ////////////////////////////////////////////////////////////////
@@ -43,6 +45,7 @@ routes.get("/transaction", findAllTrasfersController.handle);
 routes.delete("/deletetransaction/:id", deleteTrasfersController.handle);
 
 routes.post("/annotations", createAnnotationsController.handle);
+routes.get("/annotations", findAnnotationController.handle);
 //////////////////////////////////////////////////////////////////////////
 
 export { routes };
