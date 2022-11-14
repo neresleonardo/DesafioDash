@@ -11,8 +11,21 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Note from '../../components/Note';
+import api from '../../services/api';
 
 const Annotation: React.FC = () => {
+
+    const [annotations, setAnnotations] = React.useState([]);
+
+    const getdataTransaction = () => {
+        api.get("annotations").then((response) => {
+            setAnnotations(response.data);
+        });
+}
+
+React.useEffect(() => {
+    getdataTransaction()
+})
 
     const [open, setOpen] = React.useState(false);
 
@@ -30,9 +43,14 @@ const Annotation: React.FC = () => {
                     <HeaderCreate handleClickOpen={handleClickOpen} titulo="Anotações" />
                 </Content>
                 <Content>
-                    <Note/>
-                    <Note/>
-                    <Note/>
+                    {annotations.map(annotations => (
+                    <Note
+                        id={annotations['id']}
+                        key={annotations['id']}
+                        title={annotations['title']}
+                        description={annotations['description']}
+                    />
+                    ))}
                 </Content>
                 
             </Container>
