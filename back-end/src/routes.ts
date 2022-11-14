@@ -3,7 +3,7 @@ import { AuthenticateUserController } from "./module/account/authenticateUser/Au
 import { DeleteTrasfersController } from "./module/deleteTransfers/DeleteTrasfersController";
 import { FindAllTrasfersController } from "./module/findAllTransfers/FindAllTrasfersController";
 import { CreateTransactionController } from "./module/transfers/TransfersUserController";
-import { CreateClientController } from "./module/user/userCases/createUser/CreateUserController";
+import { CreateClientController } from "./module/user/createUser/CreateUserController";
 
 
 const routes = Router();

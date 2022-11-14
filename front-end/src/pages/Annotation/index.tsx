@@ -1,7 +1,6 @@
 import React from 'react';
 import FinanceCard from '../../components/FinanceCard';
 import HeaderCreate from '../../components/HeaderCreate';
-import Summary from '../../components/Summary';
 import { Container, Content } from './styles';
 
 import Dialog from '@material-ui/core/Dialog';

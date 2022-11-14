@@ -26,5 +26,5 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
 })
 
 app.listen(8000, () => {
-    console.log("Correndo em 8000");  
+    console.log("listen 8000");  
 })

@@ -10,9 +10,6 @@ interface ICreate {
 const HeaderCreate: React.FC<ICreate> = ({
     titulo, handleClickOpen
 }) => {
-
-
-
     return(
         <Container>
             <Aside>
