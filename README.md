@@ -19,6 +19,8 @@ Execute npm install nas pastas backend e frontend para instalar as dependências
 
 Rode npm start ou yarn start nas pastas backend e frontend. Acesse via localhost:3000 no frontend e no backend localhost:8000.
 
+Não esquece de criar o .env e conhectar com o banco de dados.
+
 <h1 align="center"> ✅ Demonstração da aplicação </h1>
 
 ![image](https://user-images.githubusercontent.com/14266075/201478016-5372be2c-0916-4d47-8881-c573833ee742.png)
