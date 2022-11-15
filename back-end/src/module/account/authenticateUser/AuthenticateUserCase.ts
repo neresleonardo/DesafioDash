@@ -34,6 +34,6 @@ export class AuthenticateUserCase {
         expiresIn: "1d" // Tempo
     })
     
-    return [token, client] ;
+    return { token, client};
     }
 }

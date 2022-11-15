@@ -42,9 +42,10 @@ const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     // Usuário
     const signIn = async (e: any, email: string, password: string) => {
         const result = await handleAuth(e, email, password);
-
+        
         if (result) {
-            localStorage.setItem('@desafio-falife:token', result);
+            localStorage.setItem('@desafio-falife:token', result.token);
+            localStorage.setItem('@desafio-falife:client', JSON.stringify(result.client));
             localStorage.setItem('@desafio-falife:logged', 'true');
             setLogged(true);
         }
@@ -53,6 +54,7 @@ const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
     const signOut = () => {
         localStorage.removeItem('@desafio-falife:logged');
         localStorage.removeItem('@desafio-falife:token');
+        localStorage.removeItem('@desafio-falife:client');
         setLogged(false);
     }
 

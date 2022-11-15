@@ -7,6 +7,7 @@ import {
     MdClose,
     MdMenu,
 } from 'react-icons/md';
+import { json } from 'stream/consumers';
 import { useAuth } from '../../hooks/auth';
 
 import { 
@@ -27,6 +28,9 @@ import {
 
     const { signOut } = useAuth();
     const [toggleMenuIsOpened, setToggleMenuIsOpened ] = useState(false);
+    const data = JSON.parse(localStorage.getItem('@desafio-falife:client')!);
+    console.log("data",data);
+    
     
     
 
@@ -42,7 +46,7 @@ import {
 
                 </LogImg>
                 <ProfileName>
-                    <ProfileNameText>Bem vindo</ProfileNameText>
+                    <ProfileNameText>{data.name}</ProfileNameText>
                     <ProfileNameP>Programador</ProfileNameP>
                 </ProfileName>
 
