@@ -1,5 +1,5 @@
 
-<h1 align="center"> DesafioFalifeTec </h1>
+<h1 align="center"> Desafio </h1>
 
 - Pagina de login responsiva, signIn ✅
 - Pagina de registro, (Post) ✅
